@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.10.7" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.7" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.7" />
+    <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.10.7.1" />
+    <PackageReference Include="HarfBuzzSharp" Version="2.8.2-preview.127" />
+    <PackageReference Include="SkiaSharp" Version="2.88.0-preview.127" />
+   </ItemGroup>
+</Project>
